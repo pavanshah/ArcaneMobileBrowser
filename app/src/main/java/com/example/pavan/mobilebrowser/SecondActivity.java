@@ -44,11 +44,16 @@ public class SecondActivity extends AppCompatActivity {
         //Load URL
         url1.setText(myurl);
         page.loadUrl(myurl);
+        page.clearCache(true);
+        page.clearHistory();
+        page.clearFormData();
 
         //Web settings
         WebSettings webSettings = page.getSettings();
-        webSettings.getCacheMode();
-        webSettings.getJavaScriptEnabled();
+        //webSettings.getCacheMode();
+        //webSettings.getJavaScriptEnabled();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
 
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);   //to remove edittext focus
 
